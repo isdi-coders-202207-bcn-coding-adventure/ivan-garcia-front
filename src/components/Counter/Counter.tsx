@@ -1,26 +1,50 @@
+import CounterStyled from "./CounterStyled";
+
 const Counter = () => {
   return (
-    <ul className="timer-list">
-      <li className="timer-list__timer">
-        <div className="timer__time">4</div>
-        <h2 className="timer__text">Days</h2>
-      </li>
+    <CounterStyled>
+      <ul className="timer-list">
+        <li className="timer-list__timer">
+          <div className="time-container">
+            <div className="timer__time">02</div>
+          </div>
 
-      <li className="timer-list__timer">
-        <div className="timer__time">8</div>
-        <h2 className="timer__text">Hours</h2>
-      </li>
+          <div className="text-container">
+            <span className="timer__text">days</span>
+          </div>
+        </li>
 
-      <li className="timer-list__timer">
-        <div className="timer__time">53</div>
-        <h2 className="timer__text">Minutes</h2>
-      </li>
+        <li className="timer-list__timer">
+          <div className="time-container">
+            <div className="timer__time">20</div>
+          </div>
 
-      <li className="timer-list__timer">
-        <div className="timer__time">54</div>
-        <h2 className="timer__text">Seconds</h2>
-      </li>
-    </ul>
+          <div className="text-container">
+            <span className="timer__text">hours</span>
+          </div>
+        </li>
+
+        <li className="timer-list__timer">
+          <div className="time-container">
+            <div className="timer__time">34</div>
+          </div>
+
+          <div className="text-container">
+            <span className="timer__text">minutes</span>
+          </div>
+        </li>
+
+        <li className="timer-list__timer">
+          <div className="time-container">
+            <div className="timer__time">09</div>
+          </div>
+
+          <div className="text-container">
+            <span className="timer__text">seconds</span>
+          </div>
+        </li>
+      </ul>
+    </CounterStyled>
   );
 };
 

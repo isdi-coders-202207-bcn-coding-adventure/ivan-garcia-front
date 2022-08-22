@@ -4,8 +4,11 @@ import Header from "../Header/Header";
 
 const StyledContainer = styled.div`
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
+  height: 100%;
+  background-color: #243342;
+  padding: 20px;
 `;
 
 const Layout = (): JSX.Element => {
