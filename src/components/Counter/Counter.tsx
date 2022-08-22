@@ -1,24 +1,24 @@
 const Counter = () => {
   return (
-    <ul className="field-list">
-      <li className="field-list__field">
-        <div className="field__time">Days</div>
-        <h2 className="field__title">Days</h2>
+    <ul className="timer-list">
+      <li className="timer-list__timer">
+        <div className="timer__time">4</div>
+        <h2 className="timer__text">Days</h2>
       </li>
 
-      <li className="field-list__field">
-        <div className="field__time">Hours</div>
-        <h2 className="field__title">Hours</h2>
+      <li className="timer-list__timer">
+        <div className="timer__time">8</div>
+        <h2 className="timer__text">Hours</h2>
       </li>
 
-      <li className="field-list__field">
-        <div className="field__time">Minutes</div>
-        <h2 className="field__title">Minutes</h2>
+      <li className="timer-list__timer">
+        <div className="timer__time">53</div>
+        <h2 className="timer__text">Minutes</h2>
       </li>
 
-      <li className="field-list__field">
-        <div className="field__time">Seconds</div>
-        <h2 className="field__title">Seconds</h2>
+      <li className="timer-list__timer">
+        <div className="timer__time">54</div>
+        <h2 className="timer__text">Seconds</h2>
       </li>
     </ul>
   );
