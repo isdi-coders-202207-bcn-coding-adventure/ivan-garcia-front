@@ -8,12 +8,20 @@ const CounterStyled = styled.div`
   align-items: center;
   height: 300px;
   padding: 0;
-  .timer-list {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+
+  .timer {
+    &-list {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    &__text {
+      color: #dedadd;
+      font-size: 1rem;
+    }
   }
 
   .time-container {
@@ -32,11 +40,6 @@ const CounterStyled = styled.div`
 
   .text-container {
     text-align: center;
-  }
-
-  .timer__text {
-    color: #dedadd;
-    font-size: 1rem;
   }
 `;
 
