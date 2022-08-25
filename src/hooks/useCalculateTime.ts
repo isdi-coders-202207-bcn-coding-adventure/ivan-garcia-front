@@ -1,24 +1,32 @@
-import { useCallback } from "react";
-import { State } from "../components/Counter/Counter";
+import { useEffect, useState } from "react";
+import calculateTime from "../utils/calculateTime";
+export interface State {
+  seconds: number;
+  minutes: number;
+  hours: number;
+  days: number;
+}
 
-const useCalculateTime = () => {
-  const calculateTime = useCallback((miliSeconds: number): State => {
-    let seconds = 0;
-    let minutes = 0;
-    let hours = 0;
-    let days = 0;
-
-    seconds = miliSeconds / 1000;
-
-    seconds = Math.floor((miliSeconds / 1000) % 60);
-    minutes = Math.floor((miliSeconds / 1000 / 60) % 60);
-    hours = Math.floor((miliSeconds / (1000 * 60 * 60)) % 24);
-    days = Math.floor(miliSeconds / (1000 * 60 * 60 * 24));
-
-    return { seconds: seconds, minutes, hours, days };
-  }, []);
-
-  return { calculateTime };
+const initialState: State = {
+  seconds: 0,
+  minutes: 0,
+  hours: 0,
+  days: 0,
 };
 
-export default useCalculateTime;
+export const useCalculateTime = (endDate: Date) => {
+  const [timerState, setTimerState] = useState(initialState);
+
+  useEffect(() => {
+    setInterval(() => {
+      let today = new Date();
+      let timeRemain =
+        Date.parse(endDate.toString()) - Date.parse(today.toString());
+
+      const time = calculateTime(timeRemain);
+      setTimerState(time);
+    }, 1000);
+  }, [endDate]);
+
+  return timerState;
+};
