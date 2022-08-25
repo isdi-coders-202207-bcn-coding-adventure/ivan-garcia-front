@@ -1,41 +1,9 @@
-import { useEffect, useState } from "react";
-import useCalculateTime from "../../hooks/useCalculateTime";
-
+import { useCalculateTime } from "../../hooks/useCalculateTime";
+import deadline from "../../utils/deadLine";
 import CounterStyled from "./CounterStyled";
 
-const endDate = new Date("2022-12-31");
-export interface State {
-  seconds: number;
-  minutes: number;
-  hours: number;
-  days: number;
-}
-
-const initialState: State = {
-  seconds: 0,
-  minutes: 0,
-  hours: 0,
-  days: 0,
-};
-
-let timeRemain: number;
-
 export const Counter = () => {
-  const today = new Date();
-
-  const [timerState, setTimerState] = useState(initialState);
-  const { calculateTime } = useCalculateTime();
-
-  timeRemain = Date.parse(endDate.toString()) - Date.parse(today.toString());
-
-  useEffect(() => {
-    setInterval(() => {
-      const time = calculateTime(timeRemain);
-      setTimerState(time);
-    }, 1000);
-  }, [calculateTime]);
-
-  const { seconds, minutes, hours, days } = timerState;
+  const { days, hours, minutes, seconds } = useCalculateTime(deadline);
 
   return (
     <CounterStyled>
