@@ -83,3 +83,5 @@ export const Counter = () => {
     </CounterStyled>
   );
 };
+
+export default Counter;
