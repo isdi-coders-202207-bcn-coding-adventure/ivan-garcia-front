@@ -22,7 +22,6 @@ export const useCalculateTime = (endDate: Date) => {
       let today = new Date();
       let timeRemain =
         Date.parse(endDate.toString()) - Date.parse(today.toString());
-      console.log(timeRemain);
 
       const time = calculateTime(timeRemain);
       setTimerState(time);

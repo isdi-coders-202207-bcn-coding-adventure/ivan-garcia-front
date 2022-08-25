@@ -12,7 +12,5 @@ describe("Given a component Counter", () => {
 
       expect(expectedListElements.length).toBe(listElements);
     });
-
-    test("Then it should call the function");
   });
 });
